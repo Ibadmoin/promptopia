@@ -4,26 +4,27 @@ import '@styles/globals.css';
 export const metadata = {
   title: 'Promptopia',
   description: 'Discover & Share AI Prompts.',
-}
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+        <link rel="icon" href='/assets/images/logo.svg' /> 
+      </head>
       <body>
-      <Provider>
-      <div className='main'>
-          <div className='gradient' />
-          </div>        
-
-          <main className='app'>
+        <Provider>
+          <div className="main">
+            <div className="gradient" />
+          </div>
+          <main className="app">
             <Nav />
-            
             {children}
-
           </main>
-      </Provider>
-
+        </Provider>
       </body>
     </html>
-  )
+  );
 }
